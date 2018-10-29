@@ -1,1 +1,1 @@
-# lsnotes
+# Lambda Notes
