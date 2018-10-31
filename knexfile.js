@@ -1,7 +1,7 @@
 require('dotenv').config();
 const localPg = {
   host: 'localhost',
-  database: 'lambda',
+  database: process.env.DB_NAME,
   user: process.env.DB_USER,
   password: process.env.DB_PASS,
 };
@@ -23,9 +23,10 @@ module.exports = {
     useNullAsDefault: true,
   },
 
+  // add this configuration to your project.
   production: {
-    client: 'pg',
-    connection: dbConnection,
+    client: 'pg', // yarn add pg
+    connection: dbConnection, // could be an object or a string
     pool: {
       min: 2,
       max: 10,
